@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Build-a-thon 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7e0200;
+            --muted: #505050;
+            --bg: #707070;
+            --card: #ffffff;
+            --radius: 12px;
+            --maxwidth: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        body {
+            background: var(--bg);
+            color: #1f1f1f;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'JetBrains Mono', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        p {
+            font-size: 20px !important;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: var(--maxwidth);
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* HEADER / NAV */
+        header {
+            background: var(--card);
+            box-shadow: 0 6px 20px rgba(16, 24, 40, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 60;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+        }
+
+        .brand {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.15rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            align-items: center
+        }
+
+        nav a {
+            font-weight: 600;
+            color: #0f172a;
+            padding: 0.45rem 0.6rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width:960px) {
+            nav a {
+                font-size: 1.5rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        nav a:hover {
+            background: rgba(235, 37, 37, 0.08)
+        }
+
+        .actions {
+            display: flex;
+            gap: .6rem;
+            align-items: center
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: .55rem .9rem;
+            border-radius: 10px;
+            font-weight: 700;
+            border: 0;
+            transition: all 0.2s;
+            display: inline-block
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(1.0);
+        }
+
+        .btn.secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid rgba(37, 99, 235, 0.12)
+        }
+
+        .btn.secondary:hover {
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(37, 99, 235, 0.4);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: .25rem;
+            position: relative;
+            z-index: 60;
+        }
+
+        .menu-toggle span {
+            width: 22px;
+            height: 3px;
+            background: #0f172a;
+            border-radius: 2px;
+            display: block;
+            transition: all .3s;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Hero */
+        .hero {
+            background: rgb(41, 41, 41);
+            color: white;
+            padding: 3.2rem 1rem;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 1rem;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center
+        }
+
+        .hero h1 {
+            font-size: 40px !important;
+            letter-spacing: -0.5px
+        }
+
+        .hero p {
+            max-width: 820px;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        /* Sections */
+        section {
+            padding: 2rem 1rem
+        }
+
+        .card {
+            background: var(--card);
+            padding: 1.25rem;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04)
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: center
+        }
+
+        h3 {
+            margin-bottom: .5rem;
+            color: #0f172a
+        }
+
+        p,
+        li {
+            color: var(--muted);
+            font-size: 0.98rem
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem
+        }
+
+        .cols-2 {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        .cols-3 {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        /* Important dates list */
+        .dates {
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+            max-width: 900px;
+            margin: 0 auto
+        }
+
+        .date-row {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: .6rem;
+            border-radius: 10px
+        }
+
+        .date-left {
+            min-width: 140px;
+            font-weight: 700;
+            color: #0f172a
+        }
+
+        .date-right {
+            color: var(--muted)
+        }
+
+        /* Prize table */
+        .prize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1rem
+        }
+
+        .prize {
+            padding: 1rem;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #ffffff, #fbfdff);
+            border: 1px solid rgba(15, 23, 42, 0.04)
+        }
+
+        .prize h4 {
+            color: var(--primary);
+            margin-bottom: .5rem
+        }
+
+        .prize ul {
+            list-style: disc;
+            margin-left: 1.1rem;
+            color: var(--muted)
+        }
+
+        .note {
+            font-size: .9rem;
+            color: var(--muted);
+            margin-top: .6rem
+        }
+
+        /* Sponsors grid */
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            align-items: center
+        }
+
+        .sponsor {
+            background: var(--card);
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(2, 6, 23, 0.04);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #0f172a;
+            height: 200px;
+            position: relative;
+        }
+
+        .sponsor p {
+            color: #000;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 !important;
+        }
+
+        .sponsor:hover {
+            box-shadow: 0 4px 14px rgba(2, 6, 23, 0.4);
+        }
+
+        .sponsor img {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: block;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem
+        }
+
+        /* Rules & submission */
+        .rules-list {
+            list-style: disc;
+            margin-left: 1.1rem;
+            color: var(--muted)
+        }
+
+        /* footer */
+        footer {
+            padding: 2rem 1rem;
+            background: #470000;
+            border-top: 30px solid rgb(90, 55, 55);
+            color: #e6eefc;
+            text-align: center;
+            margin-top: 1.25rem
+        }
+
+        footer p {
+            color: #e6eefc;
+        }
+
+        footer a {
+            color: #ffb3b3;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* responsive */
+        @media (max-width:960px) {
+            .cols-2 {
+                grid-template-columns: repeat(1, 1fr)
+            }
+
+            nav ul {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--card);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 50;
+            }
+
+            nav ul.open {
+                display: flex
+            }
+
+            .menu-toggle {
+                display: flex
+            }
+
+            .hero h1 {
+                font-size: 1.6rem
+            }
+        }
+
+        @media (max-width:420px) {
+            .hero {
+                padding: 2rem 0.8rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav container" role="navigation" aria-label="Main Navigation">
+            <div class="brand">Build-a-thon 2025</div>
+
+            <nav>
+                <div class="menu-toggle" id="mobileToggle" aria-controls="navList" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul id="navList">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Donate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+
+                </ul>
+            </nav>
+
+            <div class="actions">
+                <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register</a>
+                <a class="btn secondary"
+                    href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
+                    target="_blank" rel="noopener">Info Doc</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <h1 id="hero-title">Build-a-thon 2025</h1>
+            <p>48 hours, November 7 - 10, 2025<br>$10,000+ in prizes<br>Fully virtual</p>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem">
+                <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register on
+                    Devpost</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT (expanded) -->
+    <section id="about" class="container">
+        <div class="card">
+            <h1>About</h1>
+            <p style="margin-top:.6rem">
+
+                Build-a-thon 2025 is an online hackathon taking place on <strong>November 7th through 10th</strong>,
+                hosted by
+                <strong><a href="https://thebuildathonfoundation.org" target="_blank" rel="noopener">The Buildathon
+                        Foundation</a></strong>,
+                a student-led organization passionate about computer science. Over 48 hours,
+                participants build apps, games, or websites while attending beginner-friendly workshops, receiving
+                mentorship, and competing
+                for cash and partner-donated prizes. Judges from industry will evaluate submissions and finalists will
+                present live.
+            </p>
+            <p class="note" style="margin-bottom:30px;">
+                Hosting organization: <a href="https://thebuildathonfoundation.org" target="_blank" rel="noopener">The
+                    Buildathon Foundation</a>.
+
+            </p>
+            <a class="btn" href="https://discord.gg/jt2Tvbekj6" target="_blank" rel="noopener">Join
+                Discord</a>
+            <a class="btn secondary" style="margin-left:10px;" href="https://www.instagram.com/buildathon25/"
+                target="_blank" rel="noopener">Instagram</a>
+        </div>
+    </section>
+    <!-- SPONSORS -->
+    <section id="sponsors" class="container">
+        <div class="card">
+            <h2>Our Sponsors & Partners</h2>
+            <div class="sponsors-grid" style="margin-top:1rem">
+                <a href="https://hackclub.com/" target="_blank">
+                    <div class="sponsor"><img src="https://assets.hackclub.com/flag-standalone.svg">
+                        <p>Hack
+                            Club</p>
+                    </div>
+                </a>
+                <a href="https://www.zoom.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/280/highres/Zoom-Logo.png">
+                        <p>Zoom</p>
+                    </div>
+                </a>
+                <a href="https://www.canva.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/279/highres/Canva-logo.jpg">
+                        <p>Canva</p>
+                    </div>
+                </a>
+                <a href="https://www.figma.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/278/highres/Figma-Logo.png">
+                        <p>Figma</p>
+                    </div>
+                </a>
+                <a href="https://www.jukeboxprint.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/281/highres/Jukebox_Print_Jukebox_Print_Named_Best_Overall_Business_Card_Pri.jpg">
+                        <p>Jukebox Print</p>
+                    </div>
+                </a>
+                <a href="https://github.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/282/highres/GitHub-Logo.png">
+                        <p>GitHub</p>
+                    </div>
+                </a>
+                <a href="https://artofproblemsolving.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/041/834/highres/AoPS_Main_Logo_%281%29_%281%29.png">
+                        <p>AoPS</p>
+                    </div>
+                </a>
+                <a href="https://www.interviewcake.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/155/highres/download.png">
+                        <p>Interview Cake</p>
+                    </div>
+                </a>
+                <a href="https://gen.xyz/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/041/831/highres/xyz-logo-color.png">
+                        <p>gen.xyz</p>
+                    </div>
+                </a>
+            </div>
+
+            <p class="note" style="margin-top:1rem;text-align:center">
+                Build-a-thon 2025 is fiscally sponsored by The Hack Foundation (d.b.a. Hack Club), a 501(c)(3) nonprofit
+                (EIN: 81-2908499).
+                Donations support prizes, platform costs, and participant experiences.
+            </p>
+        </div>
+    </section>
+    <!-- IMPORTANT DATES -->
+    <section id="dates" class="container">
+        <div class="card">
+            <h2>Important Dates</h2>
+            <div class="dates" style="margin-top:1rem">
+                <div class="date-row">
+                    <div class="date-left">November 1</div>
+                    <div class="date-right">Intro to Hackathons Workshop</div>
+                </div>
+                <div class="date-row">
+                    <div class="date-left">November 7</div>
+                    <div class="date-right">Opening Ceremony — 6:00 PM PT</div>
+                </div>
+                <div class="date-row">
+                    <div class="date-left">November 8 - 9</div>
+                    <div class="date-right">Workshops & Speaker Sessions</div>
+                </div>
+                <div class="date-row">
+                    <div class="date-left">November 9 (EOD)</div>
+                    <div class="date-right">Submissions Due (Devpost)</div>
+                </div>
+                <div class="date-row">
+                    <div class="date-left">November 13</div>
+                    <div class="date-right">Top 10 Notification</div>
+                </div>
+                <div class="date-row">
+                    <div class="date-left">November 16</div>
+                    <div class="date-right">Finalist Live Pitches</div>
+                </div>
+                <div class="date-row">
+                    <div class="date-left">November 18</div>
+                    <div class="date-right">Top 3 Announced</div>
+                </div>
+            </div>
+            <p class="note">
+                See the <a href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
+                    target="_blank" rel="noopener">information document</a>
+                for more detailed scheduling and workshop times.
+            </p>
+        </div>
+    </section>
+
+    <!-- PRIZES -->
+    <section id="prizes" class="container">
+        <div class="card">
+            <h2>Prize Breakdown</h2>
+            <p style="margin-top:.5rem;color:var(--muted)">
+                Total prize pool: <strong>$10,000+</strong> in cash, partner licenses, credits, domains, and swag. Prize
+                categories include 1st, 2nd, 3rd,
+                Top 10, category winners (Best Solo Hacker, Social Impact, Design, Popular Choice), plus giveaways
+                throughout the event.
+            </p>
+
+            <div class="prize-grid" style="margin-top:1rem">
+                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(255, 6, 6, 0.311);">
+                    <h4>1st Place — $500 + Finalist Prize</h4>
+                    <ul>
+                        <li>Interview Cake License ×3 → $150</li>
+                        <li>Figma Pro License ×11 → $165</li>
+                        <li>.xyz domains ×5 → $50</li>
+                        <li>Jukebox Print credit* → $100</li>
+                        <li>AoPS coupon ×1 → $25</li>
+                        <li>Zoom Pro License ×1 → $15</li>
+                        <li>Canva Teams ×1 → $10</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(255, 6, 6, 0.155);">
+                    <h4>2nd Place — $400 + Finalist Prize</h4>
+                    <ul>
+                        <li>Interview Cake ×2 → $100</li>
+                        <li>Figma Pro ×11 → $165</li>
+                        <li>.xyz domains ×5 → $50</li>
+                        <li>Jukebox Print credit → $50</li>
+                        <li>AoPS coupon ×1 → $25</li>
+                        <li>Canva Teams ×1 → $10</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(255, 6, 6, 0.068);">
+                    <h4>3rd Place — $300 + Finalist Prize</h4>
+                    <ul>
+                        <li>Interview Cake ×1 → $50</li>
+                        <li>Figma Pro ×10 → $150</li>
+                        <li>.xyz domains ×5 → $50</li>
+                        <li>Jukebox Print credit → $50</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(173, 173, 173, 0.311);">
+                    <h4>Top 10 — $300 (each)</h4>
+                    <ul>
+                        <li>Interview Cake ×1 → $50</li>
+                        <li>Figma Pro ×9 → $135</li>
+                        <li>.xyz domain ×1 → $10</li>
+                        <li>Canva Teams → rotate (0–1)</li>
+                        <li>Jukebox Print credit → rotate (0–1)</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(173, 173, 173, 0.311);">
+                    <h4>Category Winners — $300</h4>
+                    <ul>
+                        <li>Best Solo Hacker, Social Impact, Design, Popular Choice — $300 + partner perks</li>
+                        <li>Interview Cake ×3 → $150 + Figma Pro, .xyz domains as listed</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(173, 173, 173, 0.311);">
+                    <h4>Giveaways & Participant Perks</h4>
+                    <ul>
+                        <li>Figma Pro Licenses ×10 (giveaway)</li>
+                        <li>.xyz domains ×10 (giveaway)</li>
+                        <li>All participants: Certificate of Participation & networking sessions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="note">
+                *Jukebox Print credit can only be redeemed for winners residing in the United States due to shipping
+                constraints and expenses.
+            </p>
+        </div>
+    </section>
+
+    <!-- RULES & ELIGIBILITY -->
+    <section id="rules" class="container">
+        <div class="card">
+            <h2>Rules & Eligibility</h2>
+            <ul class="rules-list" style="margin-top:0.8rem">
+                <li>Attendees from all backgrounds, genders, and geographies are welcome, subject to standard
+                    restrictions.</li>
+                <li>Age limit: 13–22 years old. Participants must meet regional legal requirements to receive prizes.
+                </li>
+                <li>Committee members are not eligible to compete; they may mentor during the coding phase.</li>
+                <li>No country restrictions, but winners are responsible for any taxes on prize winnings and must be
+                    eligible to receive prizes.</li>
+                <li>Teams can have a maximum of four members. Each team may submit only one entry.</li>
+                <li>Participants may not join more than one team during the event.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SUBMISSION DETAILS -->
+    <section id="submission" class="container">
+        <div class="card">
+            <h2>Submission Details</h2>
+            <p style="margin-top:.5rem;color:var(--muted)">
+                Submissions are made via Devpost. Join our <a href="https://discord.gg/jt2Tvbekj6"
+                    target="_blank">Discord</a> for announcements and any schedule changes.
+            </p>
+
+            <div style="margin-top:0.8rem">
+                <h3>Requirements</h3>
+                <ul class="rules-list">
+                    <li>All code must be written after the hackathon start time (November 7).</li>
+                    <li>Use of external tools, libraries, and APIs is allowed (disclose where relevant).</li>
+                    <li>Submissions will be judged on <strong>Impact</strong>, <strong>Creativity</strong>, and
+                        <strong>Technical Execution</strong>.
+                    </li>
+                    <li>By the deadline, teams must submit: a 2–3 minute demo video and a public GitHub repository
+                        containing the code.</li>
+                    <li>Finalists will present their product live on the announced date.</li>
+                </ul>
+                <p class="note">More specific submission format and judging criteria are available in the <a
+                        href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
+                        target="_blank" rel="noopener">information document</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKSHOPS & EVENTS -->
+    <section id="workshops" class="container">
+        <div class="card">
+            <h2>Workshops & Events</h2>
+            <p style="margin-top:.6rem;color:var(--muted)">
+                We will host a series of workshops and speaker sessions for beginners through advanced participants.
+                Exact workshop schedule will be shared in Discord and the Info Doc.
+            </p>
+            <p class="note" style="margin-top:.7rem">Join the Discord for announcements and links to workshop rooms and
+                recordings.</p>
+        </div>
+    </section>
+
+
+
+    <!-- TEAM -->
+    <section id="team" class="container">
+        <div class="card">
+            <h2>Meet the Organizers</h2>
+            <div class="team-grid" style="margin-top:1rem">
+                <div>
+                    <h3>Organizing Leads</h3>
+                    <p>Rishi Ramachandran<br>Neel Ramachandran<br>Muhammad Fowad</p>
+                </div>
+                <div>
+                    <h3>Technical Lead</h3>
+                    <p>Eldiiar Bekbolotov</p>
+                </div>
+                <div>
+                    <h3>Marketing Lead</h3>
+                    <p>Amine Oubari</p>
+                </div>
+                <div>
+                    <h3>Judges</h3>
+                    <p>Coming soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATE -->
+    <section id="contact" class="container">
+        <div class="card" style="text-align:center">
+            <h1>Donate</h1>
+            <p style="margin-top:.6rem;color:var(--muted)">
+                Every donation directly supports student innovation and helps build the next generation of tech leaders.
+                Your contribution is tax-deductible through our fiscal sponsor, The Hack Foundation.
+
+
+            </p>
+            <div style="margin-top:1rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+                <a class="btn" href="https://hcb.hackclub.com/donations/start/build-a-thon-hackathon"
+                    target="_blank">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" class="container">
+        <div class="card" style="text-align:center">
+            <h1>Contact</h1>
+            <p style="margin-top:.6rem;color:var(--muted)">
+                Questions or partnership inquiries? Email us at
+                <a href="mailto:buildathon25@gmail.com">buildathon25@gmail.com</a>
+            </p>
+            <div style="margin-top:1rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+                <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register on
+                    Devpost</a>
+                <a class="btn secondary"
+                    href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
+                    target="_blank" rel="noopener">Info Doc</a>
+                <a class="btn secondary" href="https://discord.gg/jt2Tvbekj6" target="_blank" rel="noopener">Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Build-a-thon 2025 — Hosted by The Buildathon Foundation. Fiscally sponsored by The Hack Foundation
+                (Hack Club).</p>
+            <p style="margin-top:.6rem">Made by <a href="https://github.com/eldiiarbekbolotov">Eldiiar Bekbolotov</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navList = document.getElementById('navList');
+
+        mobileToggle.addEventListener('click', () => {
+            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            mobileToggle.setAttribute('aria-expanded', String(!expanded));
+            navList.classList.toggle('open');
+            mobileToggle.classList.toggle('open');
+        });
+
+        // Smooth scroll and auto-close nav on small screens
+        document.querySelectorAll('nav a').forEach(a => {
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = a.getAttribute('href');
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (navList.classList.contains('open')) {
+                    navList.classList.remove('open');
+                    mobileToggle.classList.remove('open');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Close menu on outside click (mobile)
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                if (navList.classList.contains('open')) {
+                    navList.classList.remove('open');
+                    mobileToggle.classList.remove('open');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
