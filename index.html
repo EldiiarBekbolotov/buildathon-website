@@ -12,9 +12,9 @@
         rel="stylesheet">
     <style>
         :root {
-            --primary: #ac0000;
+            --primary: #E43631;
             --muted: #505050;
-            --bg: #707070;
+            --bg: var(--primary);
             --card: #ffffff;
             --radius: 12px;
             --maxwidth: 1100px;
@@ -50,7 +50,7 @@
         }
 
         ul li {
-            
+
             font-weight: 500;
         }
 
@@ -68,7 +68,7 @@
         /* HEADER / NAV */
         header {
             background: var(--card);
-            box-shadow:  0 5px 15px rgba(0, 0, 0, 0.116);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.116);
             position: sticky;
             top: 0;
             z-index: 60;
@@ -84,8 +84,16 @@
 
         .brand {
             font-weight: 700;
+            position: relative;
             color: var(--primary);
             font-size: 1.15rem;
+        }
+
+        .brand img {
+            width: 55px;
+            position: absolute;
+            left: -15px;
+            top: -15px;
         }
 
         nav ul {
@@ -186,11 +194,12 @@
 
         /* Hero */
         .hero {
-            background: rgb(41, 41, 41);
+            background: var(--primary);
+            background: #260707;
             color: white;
             padding: 3.2rem 1rem;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 1rem;
+            border-radius: 0 0 0px 0px;
+            margin-bottom: 0;
         }
 
         .hero .container {
@@ -279,7 +288,7 @@
             min-width: 140px;
             font-weight: 700;
             color: #1d1d1d;
-            border-left:3px solid var(--primary);
+            border-left: 3px solid var(--primary);
             padding-left: 10px;
         }
 
@@ -292,21 +301,28 @@
         .prize-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1rem
+            gap: 1rem;
         }
 
         .prize {
             padding: 1rem;
             border-radius: 12px;
             user-select: none;
-            border: 3px solid rgb(218, 19, 19);
-            transition: all 0.2s;
+            border: 3px solid var(--primary);
+            transition: all 0.2s ease-out;
         }
+
         .prize:hover {
-            background-color: red !important;
+            background-color: var(--primary) !important;
         }
-        .prize:hover h4 {color:#FFF;}
-        .prize:hover ul li {  color:#FFF !important;}
+
+        .prize:hover h4 {
+            color: #FFF;
+        }
+
+        .prize:hover ul li {
+            color: #FFF !important;
+        }
 
         .prize h4 {
             color: var(--primary);
@@ -384,8 +400,7 @@
         /* footer */
         footer {
             padding: 2rem 1rem;
-            background: #470000;
-            border-top: 30px solid rgb(90, 55, 55);
+            background: #ab0101;
             color: #e6eefc;
             text-align: center;
             margin-top: 1.25rem
@@ -448,7 +463,7 @@
         }
 
         .no-select {
-            user-select:none;
+            user-select: none;
         }
 
         .container svg {
@@ -456,8 +471,20 @@
         }
 
         #hero-title {
-            color: #ffcf33;
-            text-shadow: 0px 2px 20px rgb(253, 255, 121);
+            color: #ffffff;
+            font-family: 'Raleway';
+        }
+
+        .hero .secondary {
+            border: none;
+            background-color: rgb(130, 1, 1);
+            color: #FFF;
+        }
+
+        .hero .secondary:hover {
+            border: none;
+            background-color: rgb(182, 2, 2);
+            color: #FFF;
         }
     </style>
 </head>
@@ -466,7 +493,10 @@
 
     <header>
         <div class="nav container no-select" role="navigation" aria-label="Main Navigation">
-            <div class="brand">Build-a-thon 2025</div>
+            <div class="brand">
+                <img src="buildathon.svg">
+                <div style="margin-left: 50px;">Build-a-thon</div>
+            </div>
             <nav>
                 <div class="menu-toggle" id="mobileToggle" aria-controls="navList" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -489,59 +519,122 @@
     <!-- HERO -->
     <section class="hero no-select" aria-labelledby="hero-title">
         <div class="container">
-            <h1 id="hero-title">Build-a-thon 2025</h1>
+            <h1 id="hero-title">Build-a-thon<br />2025</h1>
             <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	viewBox="0 0 32 32" xml:space="preserve">
-<style type="text/css">
-	.avocado_een{fill:#fc0909;}
-	.avocado_twee{fill:#3D3935;}
-	.avocado_negentien{fill:#E0A838;}
-	.avocado_twintig{fill:#EAD13F;}
-	.avocado_acht{fill:#A3AEB5;}
-	.avocado_zeven{fill:#788287;}
-	.avocado_tien{fill:#C3CC6A;}
-	.st0{fill:#FFFAEE;}
-	.st1{fill:#716558;}
-	.st2{fill:#DBD2C1;}
-	.st3{fill:#D1712A;}
-	.st4{fill:#CC4121;}
-	.st5{fill:#8D3E93;}
-	.st6{fill:#248EBC;}
-	.st7{fill:#6F9B45;}
-	.st8{fill:#AF9480;}
-</style>
-<g>
-	<g>
-		<rect x="0.5" y="4.5" class="avocado_twee" width="31" height="21"/>
-	</g>
-	<g>
-		<path class="avocado_acht" d="M0.5,4.5v21h13v4h6v-4h12v-21H0.5z M30,24H2V6h28V24z"/>
-	</g>
-	<rect x="13.5" y="25.5" class="avocado_zeven" width="6" height="1.5"/>
-	<path class="avocado_een" d="M32,26V4H0v22h13v3h-1v1h9v-1h-1v-3H32z M1,25V5h30v20H1z M19,29h-5v-3h5V29z"/>
-	<path class="avocado_tien" d="M9,10H6V9h3V10z M7,11v1h3v-1H7z M7,18h3v-1H7V18z M6,20h3v-1H6V20z"/>
-	<g>
-		<g>
-			<path class="avocado_negentien" d="M22,13v1H8v-1H22z M8,16h14v-1H8V16z"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<path class="avocado_twintig" d="M17,12h-6v-1h6V12z M21,9H10v1h11V9z"/>
-		</g>
-	</g>
-</g>
-</svg>
-            <p>48 hours, November 7 - 10, 2025<br>$10,000+ in prizes<br>Fully virtual</p>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 32 32" xml:space="preserve">
+                <style type="text/css">
+                    .avocado_een {
+                        fill: rgb(189, 6, 6);
+                    }
+
+                    .avocado_twee {
+                        fill: #350202;
+                    }
+
+                    .avocado_negentien {
+                        fill: #ff908e;
+                    }
+
+                    .avocado_twintig {
+                        fill: #c4f692;
+                    }
+
+                    .avocado_acht {
+                        fill: #950b0b;
+                    }
+
+                    .avocado_zeven {
+                        fill: #520f05;
+                    }
+
+                    .avocado_tien {
+                        fill: #c9c5a5;
+                    }
+
+                    .st0 {
+                        fill: #FFFAEE;
+                    }
+
+                    .st1 {
+                        fill: #716558;
+                    }
+
+                    .st2 {
+                        fill: #DBD2C1;
+                    }
+
+                    .st3 {
+                        fill: #D1712A;
+                    }
+
+                    .st4 {
+                        fill: #CC4121;
+                    }
+
+                    .st5 {
+                        fill: #8D3E93;
+                    }
+
+                    .st6 {
+                        fill: #248EBC;
+                    }
+
+                    .st7 {
+                        fill: #6F9B45;
+                    }
+
+                    .st8 {
+                        fill: #AF9480;
+                    }
+                </style>
+                <g>
+                    <g>
+                        <rect x="0.5" y="4.5" class="avocado_twee" width="31" height="21" />
+                    </g>
+                    <g>
+                        <path class="avocado_acht" d="M0.5,4.5v21h13v4h6v-4h12v-21H0.5z M30,24H2V6h28V24z" />
+                    </g>
+                    <rect x="13.5" y="25.5" class="avocado_zeven" width="6" height="1.5" />
+                    <path class="avocado_een"
+                        d="M32,26V4H0v22h13v3h-1v1h9v-1h-1v-3H32z M1,25V5h30v20H1z M19,29h-5v-3h5V29z" />
+                    <path class="avocado_tien" d="M9,10H6V9h3V10z M7,11v1h3v-1H7z M7,18h3v-1H7V18z M6,20h3v-1H6V20z" />
+                    <g>
+                        <g>
+                            <path class="avocado_negentien" d="M22,13v1H8v-1H22z M8,16h14v-1H8V16z" />
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="avocado_twintig" d="M17,12h-6v-1h6V12z M21,9H10v1h11V9z" />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p style="font-family:'JetBrains Mono';font-weight:500;color:rgb(191, 191, 191)">48 hours, November 7 - 10,
+                2025<br>$10,000+ in
+                prizes | Fully virtual<br><br>Registrations Open!</p>
             <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem">
-                <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register on
-                    Devpost</a>
+                <a class="btn secondary" href="https://build-a-thon.devpost.com/" target="_blank"
+                    rel="noopener">Register Now</a>
             </div>
         </div>
     </section>
+
+    <div style="
+            border-top: 75px solid #320c0a;"></div>
+
+
+    <div style="
+            border-top: 60px solid #571412;"></div>
+    <div style="
+            border-top: 45px solid #7b1d1a;"></div>
+    <div style="
+            border-top: 30px solid #9f2622;"></div>
+    <div style="
+            border-top: 20px solid #c52f2a;"></div>
+
 
     <!-- ABOUT (expanded) -->
     <section id="about" class="container">
@@ -550,18 +643,16 @@
             <p style="margin-top:.6rem">
 
                 Build-a-thon 2025 is an online hackathon taking place on <strong>November 7th through 10th</strong>,
-                hosted by
-                <strong><a href="https://buildathonfoundation.org" target="_blank" rel="noopener">The Buildathon
+                hosted by the
+                <strong><a href="https://buildathonfoundation.org" target="_blank" rel="noopener">Buildathon
                         Foundation</a></strong>,
-                a student-led organization passionate about computer science. Over 48 hours,
+                a student-led organization empowering youth through computer science hackathons. Over 48 hours,
                 participants build apps, games, or websites while attending beginner-friendly workshops, receiving
-                mentorship, and competing
-                for cash and partner-donated prizes. Judges from industry will evaluate submissions and finalists will
+                mentorship, and competing real prizes. Industry professionals will evaluate submissions and finalists
+                will
                 present live.
             </p>
             <p class="note" style="margin-bottom:30px;">
-                Hosting organization: <a href="https://buildathonfoundation.org" target="_blank" rel="noopener">The
-                    Buildathon Foundation</a>.
 
             </p>
             <a class="btn" href="https://discord.gg/jt2Tvbekj6" target="_blank" rel="noopener">Join
@@ -587,7 +678,7 @@
                         <p>GitHub</p>
                     </div>
                 </a>
-                
+
                 <a href="https://www.canva.com/" target="_blank">
                     <div class="sponsor"><img
                             src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/279/highres/Canva-logo.jpg">
@@ -681,89 +772,6 @@
         </div>
     </section>
 
-    <!-- PRIZES -->
-    <section id="prizes" class="container">
-        <div class="card">
-            <h2>Prize Breakdown</h2>
-            <p style="margin-top:.5rem;color:var(--muted)">
-                Total prize pool: <strong>$10,000+</strong> in cash, partner licenses, credits, domains, and swag. Prize
-                categories include 1st, 2nd, 3rd,
-                Top 10, category winners (Best Solo Hacker, Social Impact, Design, Popular Choice), plus giveaways
-                throughout the event.
-            </p>
-
-            <div class="prize-grid" style="margin-top:1rem">
-                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(255, 6, 6, 0.311);">
-                    <h4>1st Place — $500 + Finalist Prize</h4>
-                    <ul>
-                        <li>Interview Cake License ×3 → $150</li>
-                        <li>Figma Pro License ×11 → $165</li>
-                        <li>.xyz domains ×5 → $50</li>
-                        <li>Jukebox Print credit* → $100</li>
-                        <li>AoPS coupon ×1 → $25</li>
-                        <li>Zoom Pro License ×1 → $15</li>
-                        <li>Canva Teams ×1 → $10</li>
-                    </ul>
-                </div>
-
-                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(255, 6, 6, 0.155);">
-                    <h4>2nd Place — $400 + Finalist Prize</h4>
-                    <ul>
-                        <li>Interview Cake ×2 → $100</li>
-                        <li>Figma Pro ×11 → $165</li>
-                        <li>.xyz domains ×5 → $50</li>
-                        <li>Jukebox Print credit → $50</li>
-                        <li>AoPS coupon ×1 → $25</li>
-                        <li>Canva Teams ×1 → $10</li>
-                    </ul>
-                </div>
-
-                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(255, 6, 6, 0.068);">
-                    <h4>3rd Place — $300 + Finalist Prize</h4>
-                    <ul>
-                        <li>Interview Cake ×1 → $50</li>
-                        <li>Figma Pro ×10 → $150</li>
-                        <li>.xyz domains ×5 → $50</li>
-                        <li>Jukebox Print credit → $50</li>
-                    </ul>
-                </div>
-
-                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(173, 173, 173, 0.311);">
-                    <h4>Top 10 — $300 (each)</h4>
-                    <ul>
-                        <li>Interview Cake ×1 → $50</li>
-                        <li>Figma Pro ×9 → $135</li>
-                        <li>.xyz domain ×1 → $10</li>
-                        <li>Canva Teams → rotate (0–1)</li>
-                        <li>Jukebox Print credit → rotate (0–1)</li>
-                    </ul>
-                </div>
-
-                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(173, 173, 173, 0.311);">
-                    <h4>Category Winners — $300</h4>
-                    <ul>
-                        <li>Best Solo Hacker, Social Impact, Design, Popular Choice — $300 + partner perks</li>
-                        <li>Interview Cake ×3 → $150 + Figma Pro, .xyz domains as listed</li>
-                    </ul>
-                </div>
-
-                <div class="prize" style="box-shadow:inset 0px 10px 30px rgba(173, 173, 173, 0.311);">
-                    <h4>Giveaways & Participant Perks</h4>
-                    <ul>
-                        <li>Figma Pro Licenses ×10 (giveaway)</li>
-                        <li>.xyz domains ×10 (giveaway)</li>
-                        <li>All participants: Certificate of Participation & networking sessions</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p class="note">
-                *Jukebox Print credit can only be redeemed for winners residing in the United States due to shipping
-                constraints and expenses.
-            </p>
-        </div>
-    </section>
-
     <!-- RULES & ELIGIBILITY -->
     <section id="rules" class="container">
         <div class="card">
@@ -825,6 +833,89 @@
 
 
 
+    <!-- PRIZES -->
+    <section id="prizes" class="container">
+        <div class="card">
+            <h2>Prize Breakdown</h2>
+            <p style="margin-top:.5rem;color:var(--muted)">
+                Total prize pool: <strong>$10,000+</strong> in cash, partner licenses, credits, domains, and swag. Prize
+                categories include 1st, 2nd, 3rd,
+                Top 10, category winners (Best Solo Hacker, Social Impact, Design, Popular Choice), plus giveaways
+                throughout the event.
+            </p>
+
+            <div class="prize-grid" style="margin-top:1rem">
+                <div class="prize" style="box-shadow: 0px 10px 30px rgba(255, 6, 6, 0.311);">
+                    <h4>1st Place — $500 + Finalist Prize</h4>
+                    <ul>
+                        <li>Interview Cake License ×3 → $150</li>
+                        <li>Figma Pro License ×11 → $165</li>
+                        <li>.xyz domains ×5 → $50</li>
+                        <li>Jukebox Print credit* → $100</li>
+                        <li>AoPS coupon ×1 → $25</li>
+                        <li>Zoom Pro License ×1 → $15</li>
+                        <li>Canva Teams ×1 → $10</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow: 0px 10px 30px rgba(255, 6, 6, 0.155);">
+                    <h4>2nd Place — $400 + Finalist Prize</h4>
+                    <ul>
+                        <li>Interview Cake ×2 → $100</li>
+                        <li>Figma Pro ×11 → $165</li>
+                        <li>.xyz domains ×5 → $50</li>
+                        <li>Jukebox Print credit → $50</li>
+                        <li>AoPS coupon ×1 → $25</li>
+                        <li>Canva Teams ×1 → $10</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow: 0px 10px 30px rgba(255, 6, 6, 0.068);">
+                    <h4>3rd Place — $300 + Finalist Prize</h4>
+                    <ul>
+                        <li>Interview Cake ×1 → $50</li>
+                        <li>Figma Pro ×10 → $150</li>
+                        <li>.xyz domains ×5 → $50</li>
+                        <li>Jukebox Print credit → $50</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow: 0px 10px 30px rgba(173, 173, 173, 0.311);">
+                    <h4>Top 10 — $300 (each)</h4>
+                    <ul>
+                        <li>Interview Cake ×1 → $50</li>
+                        <li>Figma Pro ×9 → $135</li>
+                        <li>.xyz domain ×1 → $10</li>
+                        <li>Canva Teams → rotate (0–1)</li>
+                        <li>Jukebox Print credit → rotate (0–1)</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow: 0px 10px 30px rgba(173, 173, 173, 0.311);">
+                    <h4>Category Winners — $300</h4>
+                    <ul>
+                        <li>Best Solo Hacker, Social Impact, Design, Popular Choice — $300 + partner perks</li>
+                        <li>Interview Cake ×3 → $150 + Figma Pro, .xyz domains as listed</li>
+                    </ul>
+                </div>
+
+                <div class="prize" style="box-shadow: 0px 10px 30px rgba(173, 173, 173, 0.311);">
+                    <h4>Giveaways & Participant Perks</h4>
+                    <ul>
+                        <li>Figma Pro Licenses ×10 (giveaway)</li>
+                        <li>.xyz domains ×10 (giveaway)</li>
+                        <li>All participants: Certificate of Participation & networking sessions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="note">
+                *Jukebox Print credit can only be redeemed for winners residing in the United States due to shipping
+                constraints and expenses.
+            </p>
+        </div>
+    </section>
+
     <!-- TEAM -->
     <section id="team" class="container">
         <div class="card">
@@ -836,11 +927,12 @@
                 </div>
                 <div>
                     <h3>Technical Lead</h3>
-                    <p>Eldiiar Bekbolotov</p>
+                    <p><a href="https://linkedin.com/in/eldiiar" target="_blank">Eldiiar Bekbolotov</a></p>
                 </div>
                 <div>
                     <h3>Marketing Lead</h3>
-                    <p>Amine Oubari</p>
+                    <p><a href="https://www.linkedin.com/in/amine-oubari-2034b0378/" target="_blank">Amine Oubari</a>
+                    </p>
                 </div>
                 <div>
                     <h3>Judges</h3>
@@ -872,8 +964,9 @@
         <div class="card" style="text-align:center">
             <h1>Contact</h1>
             <p style="margin-top:.6rem;color:var(--muted)">
-                Questions or partnership inquiries? Email us at
-                <a href="mailto:buildathon25@gmail.com">buildathon25@gmail.com</a>
+                Questions or partnership inquiries? <br />Email us at
+                <a href="mailto:buildathon25@gmail.com">buildathon25@gmail.com</a> or <a
+                    href="mailto:hi@buildathon.dev">hi@buildathon.dev</a>
             </p>
             <div style="margin-top:1rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
                 <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register on
@@ -885,8 +978,18 @@
             </div>
         </div>
     </section>
+    <div style="
+            border-top: 20px solid #c52f2a;"></div>
+    <div style="
+            border-top: 30px solid #9f2622;"></div>
+    <div style="
+            border-top: 45px solid #7b1d1a;"></div>
 
-    <footer>
+    <div style="
+            border-top: 60px solid #571412;"></div>
+    <div style="
+            border-top: 75px solid #320c0a;"></div>
+    <footer style="margin-top:0;background:#150504;">
         <div class="container">
             <p>© 2025 Build-a-thon 2025 — Hosted by the Buildathon Foundation. Fiscally sponsored by The Hack Foundation
                 (Hack Club).</p>
