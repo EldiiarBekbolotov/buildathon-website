@@ -96,6 +96,7 @@
             font-size: 1.2rem;
         }
 
+
         @media (max-width:960px) {
             nav a {
                 font-size: 1.5rem;
@@ -418,6 +419,10 @@
                 padding: 2rem 0.8rem
             }
         }
+
+        .chose:hover {
+            background-color: var(--primary);
+        }
     </style>
 </head>
 
@@ -426,7 +431,6 @@
     <header>
         <div class="nav container" role="navigation" aria-label="Main Navigation">
             <div class="brand">Build-a-thon 2025</div>
-
             <nav>
                 <div class="menu-toggle" id="mobileToggle" aria-controls="navList" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -437,16 +441,12 @@
                     <li><a href="#contact">Donate</a></li>
                     <li><a href="#contact">Contact</a></li>
 
-
+                    <li><a href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
+                            target="_blank">Info Doc</a></li>
+                    <li><a class="btn chose" href="https://build-a-thon.devpost.com/" target="_blank"
+                            rel="noopener">Register</a></li>
                 </ul>
             </nav>
-
-            <div class="actions">
-                <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register</a>
-                <a class="btn secondary"
-                    href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
-                    target="_blank" rel="noopener">Info Doc</a>
-            </div>
         </div>
     </header>
 
@@ -470,7 +470,7 @@
 
                 Build-a-thon 2025 is an online hackathon taking place on <strong>November 7th through 10th</strong>,
                 hosted by
-                <strong><a href="https://thebuildathonfoundation.org" target="_blank" rel="noopener">The Buildathon
+                <strong><a href="https://buildathonfoundation.org" target="_blank" rel="noopener">The Buildathon
                         Foundation</a></strong>,
                 a student-led organization passionate about computer science. Over 48 hours,
                 participants build apps, games, or websites while attending beginner-friendly workshops, receiving
@@ -479,7 +479,7 @@
                 present live.
             </p>
             <p class="note" style="margin-bottom:30px;">
-                Hosting organization: <a href="https://thebuildathonfoundation.org" target="_blank" rel="noopener">The
+                Hosting organization: <a href="https://buildathonfoundation.org" target="_blank" rel="noopener">The
                     Buildathon Foundation</a>.
 
             </p>
