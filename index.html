@@ -12,7 +12,7 @@
         rel="stylesheet">
     <style>
         :root {
-            --primary: #7e0200;
+            --primary: #ac0000;
             --muted: #505050;
             --bg: #707070;
             --card: #ffffff;
@@ -24,7 +24,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Lato', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            font-family: 'Raleway', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
         }
 
         body {
@@ -32,6 +32,7 @@
             color: #1f1f1f;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            transition: all 0.2s;
         }
 
         h1,
@@ -44,7 +45,13 @@
         }
 
         p {
+            font-weight: 500;
             font-size: 20px !important;
+        }
+
+        ul li {
+            
+            font-weight: 500;
         }
 
         a {
@@ -61,7 +68,7 @@
         /* HEADER / NAV */
         header {
             background: var(--card);
-            box-shadow: 0 6px 20px rgba(16, 24, 40, 0.05);
+            box-shadow:  0 5px 15px rgba(0, 0, 0, 0.116);
             position: sticky;
             top: 0;
             z-index: 60;
@@ -94,6 +101,7 @@
             padding: 0.45rem 0.6rem;
             border-radius: 8px;
             font-size: 1.2rem;
+            transition: all 0.2s;
         }
 
 
@@ -122,6 +130,7 @@
             font-weight: 700;
             border: 0;
             transition: all 0.2s;
+            user-select: none;
             display: inline-block
         }
 
@@ -202,6 +211,10 @@
             color: rgba(255, 255, 255, 0.92);
         }
 
+        ul li {
+            font-size: 18px !Important;
+        }
+
         /* Sections */
         section {
             padding: 2rem 1rem
@@ -256,6 +269,7 @@
         .date-row {
             display: flex;
             gap: 1rem;
+            justify-content: space-between;
             align-items: flex-start;
             padding: .6rem;
             border-radius: 10px
@@ -264,10 +278,13 @@
         .date-left {
             min-width: 140px;
             font-weight: 700;
-            color: #0f172a
+            color: #1d1d1d;
+            border-left:3px solid var(--primary);
+            padding-left: 10px;
         }
 
         .date-right {
+            font-weight: 500;
             color: var(--muted)
         }
 
@@ -281,9 +298,15 @@
         .prize {
             padding: 1rem;
             border-radius: 12px;
-            background: linear-gradient(180deg, #ffffff, #fbfdff);
-            border: 1px solid rgba(15, 23, 42, 0.04)
+            user-select: none;
+            border: 3px solid rgb(218, 19, 19);
+            transition: all 0.2s;
         }
+        .prize:hover {
+            background-color: red !important;
+        }
+        .prize:hover h4 {color:#FFF;}
+        .prize:hover ul li {  color:#FFF !important;}
 
         .prize h4 {
             color: var(--primary);
@@ -315,10 +338,9 @@
             padding: 0.8rem;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 14px rgba(2, 6, 23, 0.04);
+            box-shadow: 0 4px 14px rgba(2, 6, 23, 0.0);
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
             color: #0f172a;
             height: 200px;
             position: relative;
@@ -333,8 +355,8 @@
             padding: 0 !important;
         }
 
-        .sponsor:hover {
-            box-shadow: 0 4px 14px rgba(2, 6, 23, 0.4);
+        .sponsor:hover img {
+            transform: scale(1.1);
         }
 
         .sponsor img {
@@ -342,6 +364,7 @@
             margin: 0 auto;
             padding: 20px 0;
             display: block;
+            transition: all 0.2s;
         }
 
         /* Team */
@@ -423,13 +446,26 @@
         .chose:hover {
             background-color: var(--primary);
         }
+
+        .no-select {
+            user-select:none;
+        }
+
+        .container svg {
+            width: 200px;
+        }
+
+        #hero-title {
+            color: #ffcf33;
+            text-shadow: 0px 2px 20px rgb(253, 255, 121);
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <div class="nav container" role="navigation" aria-label="Main Navigation">
+        <div class="nav container no-select" role="navigation" aria-label="Main Navigation">
             <div class="brand">Build-a-thon 2025</div>
             <nav>
                 <div class="menu-toggle" id="mobileToggle" aria-controls="navList" aria-expanded="false"
@@ -451,9 +487,54 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero no-select" aria-labelledby="hero-title">
         <div class="container">
             <h1 id="hero-title">Build-a-thon 2025</h1>
+            <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	viewBox="0 0 32 32" xml:space="preserve">
+<style type="text/css">
+	.avocado_een{fill:#fc0909;}
+	.avocado_twee{fill:#3D3935;}
+	.avocado_negentien{fill:#E0A838;}
+	.avocado_twintig{fill:#EAD13F;}
+	.avocado_acht{fill:#A3AEB5;}
+	.avocado_zeven{fill:#788287;}
+	.avocado_tien{fill:#C3CC6A;}
+	.st0{fill:#FFFAEE;}
+	.st1{fill:#716558;}
+	.st2{fill:#DBD2C1;}
+	.st3{fill:#D1712A;}
+	.st4{fill:#CC4121;}
+	.st5{fill:#8D3E93;}
+	.st6{fill:#248EBC;}
+	.st7{fill:#6F9B45;}
+	.st8{fill:#AF9480;}
+</style>
+<g>
+	<g>
+		<rect x="0.5" y="4.5" class="avocado_twee" width="31" height="21"/>
+	</g>
+	<g>
+		<path class="avocado_acht" d="M0.5,4.5v21h13v4h6v-4h12v-21H0.5z M30,24H2V6h28V24z"/>
+	</g>
+	<rect x="13.5" y="25.5" class="avocado_zeven" width="6" height="1.5"/>
+	<path class="avocado_een" d="M32,26V4H0v22h13v3h-1v1h9v-1h-1v-3H32z M1,25V5h30v20H1z M19,29h-5v-3h5V29z"/>
+	<path class="avocado_tien" d="M9,10H6V9h3V10z M7,11v1h3v-1H7z M7,18h3v-1H7V18z M6,20h3v-1H6V20z"/>
+	<g>
+		<g>
+			<path class="avocado_negentien" d="M22,13v1H8v-1H22z M8,16h14v-1H8V16z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="avocado_twintig" d="M17,12h-6v-1h6V12z M21,9H10v1h11V9z"/>
+		</g>
+	</g>
+</g>
+</svg>
             <p>48 hours, November 7 - 10, 2025<br>$10,000+ in prizes<br>Fully virtual</p>
             <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem">
                 <a class="btn" href="https://build-a-thon.devpost.com/" target="_blank" rel="noopener">Register on
@@ -500,16 +581,23 @@
                             Club</p>
                     </div>
                 </a>
-                <a href="https://www.zoom.com/" target="_blank">
+                <a href="https://github.com/" target="_blank">
                     <div class="sponsor"><img
-                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/280/highres/Zoom-Logo.png">
-                        <p>Zoom</p>
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/282/highres/GitHub-Logo.png">
+                        <p>GitHub</p>
                     </div>
                 </a>
+                
                 <a href="https://www.canva.com/" target="_blank">
                     <div class="sponsor"><img
                             src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/279/highres/Canva-logo.jpg">
                         <p>Canva</p>
+                    </div>
+                </a>
+                <a href="https://www.zoom.com/" target="_blank">
+                    <div class="sponsor"><img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/280/highres/Zoom-Logo.png">
+                        <p>Zoom</p>
                     </div>
                 </a>
                 <a href="https://www.figma.com/" target="_blank">
@@ -522,12 +610,6 @@
                     <div class="sponsor"><img
                             src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/281/highres/Jukebox_Print_Jukebox_Print_Named_Best_Overall_Business_Card_Pri.jpg">
                         <p>Jukebox Print</p>
-                    </div>
-                </a>
-                <a href="https://github.com/" target="_blank">
-                    <div class="sponsor"><img
-                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/282/highres/GitHub-Logo.png">
-                        <p>GitHub</p>
                     </div>
                 </a>
                 <a href="https://artofproblemsolving.com/" target="_blank">
@@ -806,7 +888,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Build-a-thon 2025 — Hosted by The Buildathon Foundation. Fiscally sponsored by The Hack Foundation
+            <p>© 2025 Build-a-thon 2025 — Hosted by the Buildathon Foundation. Fiscally sponsored by The Hack Foundation
                 (Hack Club).</p>
             <p style="margin-top:.6rem">Made by <a href="https://github.com/eldiiarbekbolotov">Eldiiar Bekbolotov</a>
             </p>
@@ -815,7 +897,6 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Mobile menu toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navList = document.getElementById('navList');
 
@@ -826,7 +907,6 @@
             mobileToggle.classList.toggle('open');
         });
 
-        // Smooth scroll and auto-close nav on small screens
         document.querySelectorAll('nav a').forEach(a => {
             a.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -841,7 +921,6 @@
             });
         });
 
-        // Close menu on outside click (mobile)
         document.addEventListener('click', (e) => {
             if (!e.target.closest('header')) {
                 if (navList.classList.contains('open')) {
