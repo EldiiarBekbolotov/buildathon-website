@@ -523,8 +523,7 @@
 
                     <li><a href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
                             target="_blank">Info Doc</a></li>
-                    <li><a class="btn chose" href="https://build-a-thon.devpost.com/" target="_blank"
-                            rel="noopener">Register</a></li>
+                    <li><a class="btn chose" href="https://build-a-thon.devpost.com/" target="_blank">Register</a></li>
                 </ul>
             </nav>
         </div>
@@ -735,6 +734,24 @@
                         <p>gen.xyz</p>
                     </div>
                 </a>
+                <a href="https://1password.com/" target="_blank">
+                    <div class="sponsor">
+                        <img src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/510/highres/images.png">
+                        <p>1Password</p>
+                    </div>
+                </a><a href="https://codecrafters.io/" target="_blank">
+                    <div class="sponsor">
+                        <img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/515/highres/Logomark_%28With_color%29.png">
+                        <p>CodeCrafters</p>
+                    </div>
+                </a><a href="https://unibee.dev/" target="_blank">
+                    <div class="sponsor">
+                        <img
+                            src="https://s3.amazonaws.com/challengepost/sponsors/logos/000/043/537/highres/UniBee_Main_Logo.png">
+                        <p>UniBee</p>
+                    </div>
+                </a>
             </div>
 
             <p class="note" style="margin-top:1rem;text-align:center">
@@ -942,6 +959,7 @@
                 *Jukebox Print credit can only be redeemed for winners residing in the United States due to shipping
                 constraints and expenses.
             </p>
+            <p class="note">More prizes are coming soon.</p>
         </div>
     </section>
 
@@ -954,7 +972,9 @@
                     <h3>Organizing Leads</h3>
                     <p><a href="https://www.linkedin.com/in/rishi-ramachandran-b0989736a/" target="_blank">Rishi
                             Ramachandran</a><br><a href="https://www.linkedin.com/in/neel-ramachandran-4765a7285/"
-                            target="_blank">Neel Ramachandran</a><br>Muhammad Fowad</p>
+                            target="_blank">Neel Ramachandran</a><br><a
+                            href="https://www.linkedin.com/in/muhammad%2Dfowad%2D00b53a360/" target='_blank'>Muhammad
+                            Fowad</a></p>
                 </div>
                 <div>
                     <h3>Technical Lead</h3>
@@ -965,10 +985,27 @@
                     <p><a href="https://www.linkedin.com/in/amine-oubari-2034b0378/" target="_blank">Amine Oubari</a>
                     </p>
                 </div>
-                <div>
-                    <h3>Judges</h3>
-                    <p>Coming soon</p>
-                </div>
+            </div>
+
+            <div style="margin-top:30px;">
+                <h3>Judges</h3>
+                <ul style="padding-left: 20px;">
+                    <li>
+                        <b>Mahendran Chinnaiah</b><br>
+                        Mahendran Chinnaiah is a seasoned and visionary Digital Healthcare Architect with over 18
+                        years of experience in delivering enterprise solutions.
+                    </li>
+                    <li><b>Praneetha Kotla</b><br>
+                        AI & Innovation leader with extensive experience mentoring and judging global hackathons,
+                        passionate about supporting teams solving real-world problems.</li>
+                    <li><b>Karthik Jayaprakash</b><br>
+                        Technical Leader at AMD focusing on GPU performance optimization.
+                    </li>
+                    <li>
+                        <b>Alan Xiao Lin Zhu</b><br>
+                        Consultant at BCG
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -991,8 +1028,8 @@
                     Devpost</a>
                 <a class="btn secondary"
                     href="https://docs.google.com/document/d/1h3PfZuvOu7gD-wZ-lftF6qy3HjMu3TUb/edit?usp=sharing"
-                    target="_blank" rel="noopener">Info Doc</a>
-                <a class="btn secondary" href="https://discord.gg/jt2Tvbekj6" target="_blank" rel="noopener">Discord</a>
+                    target="_blank">Info Doc</a>
+                <a class="btn secondary" href="https://discord.gg/jt2Tvbekj6" target="_blank">Discord</a>
             </div>
         </div>
     </section>
@@ -1030,10 +1067,14 @@
 
         document.querySelectorAll('nav a').forEach(a => {
             a.addEventListener('click', (e) => {
-                e.preventDefault();
                 const href = a.getAttribute('href');
-                const target = document.querySelector(href);
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Only prevent default and do smooth scroll for internal links (starting with #)
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                // Close mobile menu regardless of link type
                 if (navList.classList.contains('open')) {
                     navList.classList.remove('open');
                     mobileToggle.classList.remove('open');
